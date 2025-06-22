@@ -1,16 +1,24 @@
-
-
 import { useEffect, useState } from 'react'
 
 export default function Navbar() {
-  const [theme, setTheme] = useState('dark')
+  const [theme, setTheme] = useState(() => {
+    if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+      return localStorage.getItem('theme')
+    }
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      return 'dark'
+    }
+    return 'light'
+  })
 
   useEffect(() => {
+    const root = document.documentElement
     if (theme === 'dark') {
-      document.documentElement.classList.add('dark')
+      root.classList.add('dark')
     } else {
-      document.documentElement.classList.remove('dark')
+      root.classList.remove('dark')
     }
+    localStorage.setItem('theme', theme)
   }, [theme])
 
   const toggleTheme = () => {
@@ -18,7 +26,7 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="w-full px-6 py-4 flex justify-between items-center bg-forest text-fog dark:bg-fog dark:text-forest shadow-sm fixed top-0 z-50">
+    <nav className="w-full px-6 py-4 flex justify-between items-center bg-fog text-forest dark:bg-forest dark:text-fog shadow-sm fixed top-0 z-50">
       <h1 className="text-xl font-bold tracking-wide">Sam Bowen</h1>
       <ul className="flex space-x-6 font-medium">
         <li><a href="#about" className="hover:underline">About</a></li>
