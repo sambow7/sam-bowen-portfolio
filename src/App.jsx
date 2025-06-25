@@ -10,11 +10,21 @@ function App() {
   return (
     <>
       <Navbar />
-      <Hero />
-      <About />
-      <TechStack />
-      <Projects />
-      <Contact />
+      <section className="snap-start">
+        <Hero />
+      </section>
+      <section className="snap-start" id="about">
+        <About />
+      </section>
+      <section className="snap-start">
+        <TechStack />
+      </section>
+      <section className="snap-start" id="projects">
+        <Projects />
+      </section>
+      <section className="snap-start" id="contact">
+        <Contact />
+      </section>
       <Footer />
     </>
   )
