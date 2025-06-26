@@ -25,7 +25,12 @@ export default function Navbar() {
   }, [theme])
 
   const toggleTheme = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark')
+    console.log('Theme before toggle:', theme);
+    console.log('HTML classes before toggle:', document.documentElement.classList);
+    setTheme(theme === 'dark' ? 'light' : 'dark');
+    setTimeout(() => {
+      console.log('HTML classes after toggle:', document.documentElement.classList);
+    }, 100);
   }
 
   const navItems = [

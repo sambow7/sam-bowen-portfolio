@@ -1,17 +1,9 @@
-@tailwind base;
-@tailwind components;
+/* @import "tailwindcss"; */
+
 @tailwind utilities;
 
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+
 
 html {
   scroll-behavior: smooth;
@@ -22,6 +14,14 @@ body {
   min-width: 320px;
   min-height: 100vh;
   scroll-snap-type: y mandatory;
+  background-color: #D2DCE2; /* fog */
+  color: #122620; /* forest */
+  font-family: "Neue Montreal", ui-sans-serif, system-ui;
+}
+
+.dark body {
+  background-color: #122620; /* forest */
+  color: #D2DCE2; /* fog */
 }
 
 /* Custom scrollbar */
@@ -65,6 +65,7 @@ body {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -81,4 +82,4 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-} 
+}

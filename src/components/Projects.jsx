@@ -7,7 +7,7 @@ const projectData = [
     description: 'A translator app built with React and API integration. Includes real-time language translation with a clean UI.',
     tech: ['React', 'API', 'CSS'],
     liveLink: 'https://babelbot.example.com',
-    githubLink: 'https://github.com/yourname/babelbot',
+    githubLink: 'https://github.com/sambow7/BabelBot.git',
   },
   {
     title: 'CORPO',
@@ -21,14 +21,15 @@ const projectData = [
     description: 'A MERN app for plant lovers to share, sell, and blog about their plants. Includes user auth and image support.',
     tech: ['MongoDB', 'Express', 'React', 'Node'],
     liveLink: 'https://propagation.example.com',
-    githubLink: 'https://github.com/yourname/propagation-station',
+    githubLink: 'https://github.com/sambow7/propagation-station-app.git',
   },
   {
     title: 'Atlash',
     description: 'Track and document ashes-spreading journeys around the world. React front-end with weather API integration.',
     tech: ['React', 'Tailwind', 'API'],
     liveLink: 'https://atlash.example.com',
-    githubLink: 'https://github.com/yourname/atlash',
+    githubLinkFrontend: 'https://github.com/sambow7/atlash_client.git',
+    githubLinkBackend: 'https://github.com/sambow7/atlash_app.git',
   },
 ]
 
