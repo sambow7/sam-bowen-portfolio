@@ -1,9 +1,13 @@
-/* @import "tailwindcss"; */
-
+@tailwind base;
+@tailwind components;
 @tailwind utilities;
 
 
 
+
+#root {
+  padding: 0;
+}
 
 html {
   scroll-behavior: smooth;
@@ -14,14 +18,13 @@ body {
   min-width: 320px;
   min-height: 100vh;
   scroll-snap-type: y mandatory;
-  background-color: #D2DCE2; /* fog */
-  color: #122620; /* forest */
+  background-color: #0D0D0D; /* night */
+  color: #E2E8F0; /* star */
   font-family: "Neue Montreal", ui-sans-serif, system-ui;
 }
 
 .dark body {
-  background-color: #122620; /* forest */
-  color: #D2DCE2; /* fog */
+  color: #E2E8F0; /* star */
 }
 
 /* Custom scrollbar */
@@ -30,28 +33,28 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #D2DCE2;
+  background: #E2E8F0;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #7F7F56;
+  background: #6D83F2;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #D0CD8A;
+  background: #1B1F3B;
 }
 
 .dark ::-webkit-scrollbar-track {
-  background: #122620;
+  background: #0D0D0D;
 }
 
 .dark ::-webkit-scrollbar-thumb {
-  background: #D0CD8A;
+  background: #6D83F2;
 }
 
 .dark ::-webkit-scrollbar-thumb:hover {
-  background: #7F7F56;
+  background: #1B1F3B;
 }
 
 /* Smooth transitions for theme switching */
@@ -82,4 +85,41 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
 }

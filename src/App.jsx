@@ -11,7 +11,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <section className="snap-start">
+      <section className="snap-start relative overflow-hidden">
         <Hero />
       </section>
       <section className="snap-start" id="about">

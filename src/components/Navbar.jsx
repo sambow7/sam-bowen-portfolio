@@ -44,7 +44,7 @@ export default function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="w-full px-6 py-4 flex justify-between items-center bg-fog/95 backdrop-blur-sm text-forest dark:bg-forest/95 dark:text-fog shadow-sm fixed top-0 z-50"
+      className="w-full px-6 py-4 flex justify-between items-center bg-white/10 dark:bg-black/20 backdrop-blur-md border-b border-white/20 dark:border-black/20 text-star dark:text-nebula shadow-sm fixed top-0 z-50"
     >
       <motion.h1 
         whileHover={{ scale: 1.05 }}
@@ -60,7 +60,7 @@ export default function Navbar() {
             <motion.a 
               href={item.href}
               whileHover={{ y: -2 }}
-              className="hover:text-sand dark:hover:text-sand transition-colors"
+              className="hover:text-nebula dark:hover:text-nebula transition-colors"
             >
               {item.label}
             </motion.a>
@@ -70,7 +70,7 @@ export default function Navbar() {
           onClick={toggleTheme}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
-          className="ml-4 p-2 rounded-full bg-sand/20 dark:bg-moss/20 hover:bg-sand/30 dark:hover:bg-moss/30 transition-colors"
+          className="ml-4 p-2 rounded-full bg-nebula/20 dark:bg-space/20 hover:bg-nebula/30 dark:hover:bg-space/30 transition-colors"
         >
           {theme === 'dark' ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
         </motion.button>
@@ -80,7 +80,7 @@ export default function Navbar() {
       <motion.button
         whileTap={{ scale: 0.9 }}
         onClick={() => setIsMenuOpen(!isMenuOpen)}
-        className="md:hidden p-2 rounded-full bg-sand/20 dark:bg-moss/20"
+        className="md:hidden p-2 rounded-full bg-nebula/20 dark:bg-space/20"
       >
         {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
       </motion.button>
@@ -93,7 +93,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
-            className="absolute top-full left-0 right-0 bg-fog/95 backdrop-blur-sm dark:bg-forest/95 border-t border-ash/20 dark:border-sand/20 md:hidden"
+            className="absolute top-full left-0 right-0 bg-star/95 backdrop-blur-sm dark:bg-night/95 border-t border-star/20 dark:border-nebula/20 md:hidden"
           >
             <div className="px-6 py-4 space-y-4">
               {navItems.map((item) => (
@@ -102,7 +102,7 @@ export default function Navbar() {
                   href={item.href}
                   onClick={() => setIsMenuOpen(false)}
                   whileHover={{ x: 10 }}
-                  className="block text-lg font-medium hover:text-sand dark:hover:text-sand transition-colors"
+                  className="block text-lg font-medium hover:text-nebula dark:hover:text-nebula transition-colors"
                 >
                   {item.label}
                 </motion.a>
@@ -110,7 +110,7 @@ export default function Navbar() {
               <motion.button 
                 onClick={toggleTheme}
                 whileHover={{ scale: 1.05 }}
-                className="flex items-center space-x-2 p-2 rounded-full bg-sand/20 dark:bg-moss/20 hover:bg-sand/30 dark:hover:bg-moss/30 transition-colors"
+                className="flex items-center space-x-2 p-2 rounded-full bg-nebula/20 dark:bg-space/20 hover:bg-nebula/30 dark:hover:bg-space/30 transition-colors"
               >
                 {theme === 'dark' ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
                 <span>{theme === 'dark' ? 'Light Mode' : 'Dark Mode'}</span>
