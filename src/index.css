@@ -23,6 +23,10 @@ body {
   font-family: "Neue Montreal", ui-sans-serif, system-ui;
 }
 
+body, html, #root {
+  overflow: visible !important;
+}
+
 .dark body {
   color: #E2E8F0; /* star */
 }
