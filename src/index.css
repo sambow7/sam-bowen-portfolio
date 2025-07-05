@@ -1,3 +1,24 @@
+
+@keyframes button-glow {
+  0% { box-shadow: 0 0 5px rgba(255, 255, 255, 0.3); }
+  50% { box-shadow: 0 0 20px rgba(255, 255, 255, 0.7); transform: scale(1.05); }
+  100% { box-shadow: 0 0 5px rgba(255, 255, 255, 0.3); }
+}
+
+.button-hover-effect:hover {
+  animation: button-glow 1s ease-in-out infinite;
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  transform: scale(1.05);
+}
+#tsparticles {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -18,8 +39,8 @@ body {
   min-width: 320px;
   min-height: 100vh;
   scroll-snap-type: y mandatory;
-  background-color: #0D0D0D; /* night */
-  color: #E2E8F0; /* star */
+  background: linear-gradient(to bottom right, #000000, #0f172a, #000000); /* Clean galaxy gradient */
+  color: #E2E8F0;
   font-family: "Neue Montreal", ui-sans-serif, system-ui;
 }
 
@@ -126,4 +147,77 @@ body, html, #root {
 
 .read-the-docs {
   color: #888;
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg) scale(1);
+  }
+  to {
+    transform: rotate(360deg) scale(1.05);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+/* Space Dust Elements */
+@keyframes float-slow {
+  0% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-10px) translateX(5px); }
+  100% { transform: translateY(0) translateX(0); }
+}
+
+@keyframes float-medium {
+  0% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-20px) translateX(-5px); }
+  100% { transform: translateY(0) translateX(0); }
+}
+
+@keyframes float-fast {
+  0% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-30px) translateX(10px); }
+  100% { transform: translateY(0) translateX(0); }
+}
+
+.animate-float-slow {
+  animation: float-slow 12s ease-in-out infinite;
+}
+
+.animate-float-medium {
+  animation: float-medium 8s ease-in-out infinite;
+}
+
+.animate-float-fast {
+  animation: float-fast 5s ease-in-out infinite;
+}
+
+/* Shooting Star Animation */
+@keyframes shooting-star {
+  0% {
+    transform: translateX(0) translateY(0) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(600px) translateY(100px) scale(1.5);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateX(1200px) translateY(200px) scale(0);
+    opacity: 0;
+  }
+}
+
+.animate-shooting-star-1 {
+  animation: shooting-star 3s linear infinite;
+  animation-delay: 5s;
+}
+
+.animate-shooting-star-2 {
+  animation: shooting-star 5s linear infinite;
+}
+
+.animate-shooting-star-3 {
+  animation: shooting-star 3s linear infinite;
 }
