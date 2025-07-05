@@ -1,3 +1,22 @@
+/* Sci-fi button base shape */
+.sci-fi-button {
+  position: relative;
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: transparent;
+  border: 2px solid #6D83F2;
+  clip-path: polygon(0 0, 90% 0, 100% 20%, 100% 100%, 10% 100%, 0 80%);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+.sci-fi-button:hover {
+  background-color: rgba(109, 131, 242, 0.3);
+  transform: scale(1.05);
+}
 
 @keyframes button-glow {
   0% { box-shadow: 0 0 5px rgba(255, 255, 255, 0.3); }
@@ -220,4 +239,80 @@ body, html, #root {
 
 .animate-shooting-star-3 {
   animation: shooting-star 3s linear infinite;
+}
+/* Animated border pulse effect for sci-fi button */
+.sci-fi-button {
+  position: relative;
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: transparent;
+  border: 2px solid #6D83F2;
+  clip-path: polygon(0 0, 90% 0, 100% 20%, 100% 100%, 10% 100%, 0 80%);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+  overflow: visible; /* 👈 Make sure this is set */
+}
+
+.sci-fi-button::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border: 2px solid rgba(109, 131, 242, 0.5);
+  border-radius: 12px; /* Optional: Smooth out the pulse edges */
+  animation: border-pulse 2s infinite ease-in-out;
+  z-index: -1;
+}
+
+@keyframes border-pulse {
+  0% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+  100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+}
+/* Sci-fi button border pulse container */
+.sci-fi-button-container {
+  position: relative;
+  display: inline-block;
+}
+
+.sci-fi-button-container::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border: 2px solid rgba(109, 131, 242, 0.5);
+  border-radius: 12px;
+  animation: border-pulse 2s infinite ease-in-out;
+  z-index: -1;
+}
+
+@keyframes border-pulse {
+  0% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+  100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
 }

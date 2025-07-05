@@ -30,12 +30,14 @@ export default function Hero() {
           A Seattle-based junior developer creating seamless digital experiences with clean code, creative problem-solving, and soul.
         </p>
         <div className="mt-8">
-          <a
-            href="#projects"
-            className="inline-block bg-white/10 dark:bg-black/20 backdrop-blur-md border border-white/30 dark:border-black/30 text-white font-semibold px-6 py-3 rounded hover:bg-white/20 dark:hover:bg-black/30 transition-all duration-300 shadow hover:shadow-lg button-hover-effect"
-          >
-            View My Work
-          </a>
+          <div className="sci-fi-button-container">
+            <a
+              href="#projects"
+              className="sci-fi-button"
+            >
+              View My Work
+            </a>
+          </div>
         </div>
       </div>
     </div>
