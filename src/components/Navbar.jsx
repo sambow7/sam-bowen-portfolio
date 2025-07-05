@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Sun, Moon, Menu, X } from 'lucide-react'
+import { Sun, Moon, Star, Menu, X } from 'lucide-react'
 
 export default function Navbar() {
   const [theme, setTheme] = useState(() => {
@@ -15,19 +15,34 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   useEffect(() => {
-    const root = document.documentElement
+    const body = document.body;
+
     if (theme === 'dark') {
-      root.classList.add('dark')
+      body.classList.add('dark');
+      body.classList.remove('cyber', 'light');
+    } else if (theme === 'cyber') {
+      body.classList.add('cyber');
+      body.classList.remove('dark', 'light');
     } else {
-      root.classList.remove('dark')
+      body.classList.add('light');
+      body.classList.remove('dark', 'cyber');
     }
-    localStorage.setItem('theme', theme)
-  }, [theme])
+
+    localStorage.setItem('theme', theme);
+  }, [theme]);
 
   const toggleTheme = () => {
     console.log('Theme before toggle:', theme);
     console.log('HTML classes before toggle:', document.documentElement.classList);
-    setTheme(theme === 'dark' ? 'light' : 'dark');
+
+    if (theme === 'dark') {
+      setTheme('light');
+    } else if (theme === 'light') {
+      setTheme('cyber');
+    } else {
+      setTheme('dark');
+    }
+
     setTimeout(() => {
       console.log('HTML classes after toggle:', document.documentElement.classList);
     }, 100);
@@ -44,7 +59,7 @@ export default function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="w-full px-6 py-4 flex justify-between items-center bg-white/10 dark:bg-black/20 backdrop-blur-md border-b border-white/20 dark:border-black/20 text-star dark:text-nebula shadow-sm fixed top-0 z-50"
+      className="navbar w-full px-6 py-4 flex justify-between items-center backdrop-blur-md text-star dark:text-nebula shadow-sm fixed top-0 z-50"
     >
       <motion.h1 
         whileHover={{ scale: 1.05 }}
@@ -72,7 +87,7 @@ export default function Navbar() {
           whileTap={{ scale: 0.9 }}
           className="ml-4 p-2 rounded-full bg-nebula/20 dark:bg-space/20 hover:bg-nebula/30 dark:hover:bg-space/30 transition-colors"
         >
-          {theme === 'dark' ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+          {theme === 'dark' ? <Sun className="w-4 h-4" /> : theme === 'light' ? <Moon className="w-4 h-4" /> : <Star className="w-4 h-4" />}
         </motion.button>
       </div>
 
@@ -112,8 +127,8 @@ export default function Navbar() {
                 whileHover={{ scale: 1.05 }}
                 className="flex items-center space-x-2 p-2 rounded-full bg-nebula/20 dark:bg-space/20 hover:bg-nebula/30 dark:hover:bg-space/30 transition-colors"
               >
-                {theme === 'dark' ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
-                <span>{theme === 'dark' ? 'Light Mode' : 'Dark Mode'}</span>
+                {theme === 'dark' ? <Sun className="w-4 h-4" /> : theme === 'light' ? <Moon className="w-4 h-4" /> : <Star className="w-4 h-4" />}
+                <span>{theme === 'dark' ? 'Light Mode' : theme === 'light' ? 'Cyber Mode' : 'Dark Mode'}</span>
               </motion.button>
             </div>
           </motion.div>

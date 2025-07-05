@@ -1,4 +1,6 @@
 export default function Hero() {
+
+
   return (
     <div className="relative overflow-hidden min-h-screen pt-20">
       {/* Animated background layers */}
@@ -22,11 +24,11 @@ export default function Hero() {
       <div className="absolute top-[40%] left-[80%] w-2 h-2 bg-white rounded-full opacity-55 animate-float-fast blur-sm"></div>
       <div className="absolute top-[15%] left-[60%] w-1.5 h-1.5 bg-white rounded-full opacity-60 animate-float-medium blur-sm"></div>
       <div className="absolute top-[65%] left-[20%] w-2 h-2 bg-white rounded-full opacity-50 animate-float-fast blur-sm"></div>
-      <div className="relative z-10 text-white px-6 py-12 flex flex-col justify-center items-center text-center font-sans min-h-screen">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-6">
+      <div className="relative z-10 text-white px-6 py-12 flex flex-col justify-center items-center text-center min-h-screen">
+        <h1 className="hero-title text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-6">
           Hi, I’m Sam — I build human-centered web apps.
         </h1>
-        <p className="text-lg sm:text-xl text-star dark:text-nebula">
+        <p className="hero-description text-lg sm:text-xl">
           A Seattle-based junior developer creating seamless digital experiences with clean code, creative problem-solving, and soul.
         </p>
         <div className="mt-8">

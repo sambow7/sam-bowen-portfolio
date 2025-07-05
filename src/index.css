@@ -1,3 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@400;700&family=Roboto+Condensed:wght@400;700&display=swap');
+body.dark .hero-title, body.dark .hero-description {
+  color: #E2E8F0;
+}
+
+body.light .hero-title, body.light .hero-description {
+  color: #1A1A1A;
+}
+
+body.cyber .hero-title, body.cyber .hero-description {
+  color: #00FFAE;
+}
+
+body.dark .navbar {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+body.light .navbar {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+body.cyber .navbar {
+  background-color: rgba(0, 255, 174, 0.2);
+  border-bottom: 1px solid rgba(0, 255, 174, 0.5);
+}
+/* Theme color variables */
+:root {
+  --button-border: #6D83F2;
+  --button-hover-bg: rgba(109, 131, 242, 0.3);
+  --button-pulse: rgba(109, 131, 242, 0.5);
+}
+
+.light-mode {
+  --button-border: #6D83F2;
+  --button-hover-bg: rgba(109, 131, 242, 0.3);
+  --button-pulse: rgba(109, 131, 242, 0.5);
+}
+
+.dark-mode {
+  --button-border: #FFFFFF;
+  --button-hover-bg: rgba(255, 255, 255, 0.2);
+  --button-pulse: rgba(255, 255, 255, 0.4);
+}
+
+.cyber-mode {
+  --button-border: #00FFAE;
+  --button-hover-bg: rgba(0, 255, 174, 0.3);
+  --button-pulse: rgba(0, 255, 174, 0.5);
+}
+
 /* Sci-fi button base shape */
 .sci-fi-button {
   position: relative;
@@ -7,14 +59,15 @@
   text-transform: uppercase;
   letter-spacing: 1px;
   background: transparent;
-  border: 2px solid #6D83F2;
+  border: 2px solid var(--button-border);
   clip-path: polygon(0 0, 90% 0, 100% 20%, 100% 100%, 10% 100%, 0 80%);
   transition: background-color 0.3s ease, transform 0.3s ease;
   cursor: pointer;
+  overflow: visible;
 }
 
 .sci-fi-button:hover {
-  background-color: rgba(109, 131, 242, 0.3);
+  background-color: var(--button-hover-bg);
   transform: scale(1.05);
 }
 
@@ -58,9 +111,23 @@ body {
   min-width: 320px;
   min-height: 100vh;
   scroll-snap-type: y mandatory;
-  background: linear-gradient(to bottom right, #000000, #0f172a, #000000); /* Clean galaxy gradient */
   color: #E2E8F0;
   font-family: "Neue Montreal", ui-sans-serif, system-ui;
+}
+
+body.dark {
+  background: linear-gradient(to bottom right, #0d0d0d, #1a1a1a, #000000);
+  font-family: 'Roboto Condensed', ui-sans-serif, system-ui;
+}
+
+body.light {
+  background: linear-gradient(to bottom right, #e2e8f0, #ffffff, #dce0e6);
+  font-family: 'Poppins', ui-sans-serif, system-ui;
+}
+
+body.cyber {
+  background: linear-gradient(to bottom right, #0f0f0f, #00ffae, #001f1f);
+  font-family: 'Orbitron', 'Share Tech Mono', monospace;
 }
 
 body, html, #root {
@@ -296,7 +363,7 @@ body, html, #root {
   left: -10px;
   right: -10px;
   bottom: -10px;
-  border: 2px solid rgba(109, 131, 242, 0.5);
+  border: 2px solid var(--button-pulse);
   border-radius: 12px;
   animation: border-pulse 2s infinite ease-in-out;
   z-index: -1;
