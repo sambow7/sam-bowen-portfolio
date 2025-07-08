@@ -74,7 +74,10 @@ export default function Navbar() {
           <motion.li key={item.href} className="list-none">
             <motion.a 
               href={item.href}
-              whileHover={{ y: -2 }}
+              whileHover={{ 
+                y: theme === 'cyber' ? -1 : -2, 
+                scale: theme === 'cyber' ? 1.05 : 1 
+              }}
               className="hover:text-nebula dark:hover:text-nebula transition-colors"
             >
               {item.label}
@@ -116,7 +119,10 @@ export default function Navbar() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setIsMenuOpen(false)}
-                  whileHover={{ x: 10 }}
+                  whileHover={{ 
+                    x: theme === 'cyber' ? 6 : 10, 
+                    scale: theme === 'cyber' ? 1.05 : 1 
+                  }}
                   className="block text-lg font-medium hover:text-nebula dark:hover:text-nebula transition-colors"
                 >
                   {item.label}

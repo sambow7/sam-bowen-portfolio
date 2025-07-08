@@ -384,3 +384,18 @@ body, html, #root {
     transform: scale(1);
   }
 }
+body.dark .navbar a {
+  color: #4932a4;
+  cursor: pointer;
+  transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
+}
+
+body.dark .navbar a:hover {
+  color: #6D83F2;
+  text-shadow: 0 0 6px rgba(109, 131, 242, 0.7), 0 0 12px rgba(109, 131, 242, 0.5), 0 0 20px rgba(109, 131, 242, 0.3);
+  transform: translateY(-2px) scale(1.05);
+}
+
+.navbar a {
+  transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
+}
